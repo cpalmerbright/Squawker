@@ -1,7 +1,6 @@
 <header>
   <h1> Posts </h1>
       <ul>
-
         <li> <%= link_to "New Post", new_post_path %> </li>
       </ul>
 </header>
@@ -9,7 +8,7 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-      <h2><%= link_to post.user.email, edit_user_registration_path(post.user) %></h2>
+      <h2><%= link_to post.user.username, edit_user_registration_path(post.user) %></h2>
       <p><%= post.content %> </p>
   <% end %>
 </div>

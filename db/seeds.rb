@@ -13,13 +13,20 @@ User.delete_all
 
 User.create!(email: 'test@test.com',
              password: 'password',
-             password_confirmation: 'password')
+             password_confirmation: 'password',
+             first_name: 'Test',
+             last_name: 'McTesterson',
+             username: 'test'
+)
 
 5.times do
   pword = Faker::Internet.password
   User.create!(email: Faker::Internet.email,
                password: pword,
-               password_confirmation: pword
+               password_confirmation: pword,
+               first_name: Faker::Name.first_name,
+               last_name: Faker::Name.last_name,
+               username: Faker::Internet.user_name
   )
 end
 
