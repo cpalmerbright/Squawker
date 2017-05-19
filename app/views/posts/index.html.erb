@@ -9,7 +9,7 @@
 
 <div id="posts">
   <% @posts.each do |post| %>
-      <h2><%= link_to post.user, post.user %></h2>
+      <h2><%= link_to post.user.email, edit_user_registration_path(post.user) %></h2>
       <p><%= post.content %> </p>
   <% end %>
 </div>
