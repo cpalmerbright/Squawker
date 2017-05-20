@@ -1,0 +1,14 @@
+<p><%= @post.content %></p>
+<p><%= @post.user.username %>
+  <%= @post.created_at %> </p>
+
+<h4> Comments </h4>
+<% @comments.each do |comment| %>
+    <p><%= comment.content %></p>
+    <p><%= comment.user.username %>
+    <%= comment.created_at %> </p>
+    <p><%= link_to 'Delete', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
+
+
+<%= render partial: 'comments/form', locals: { comment: @comment } %>

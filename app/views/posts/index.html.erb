@@ -10,5 +10,6 @@
   <% @posts.each do |post| %>
       <h2><%= link_to post.user.username, edit_user_registration_path(post.user) %></h2>
       <p><%= post.content %> </p>
+      <%= link_to 'View Post', post_path(post) %>
   <% end %>
 </div>
