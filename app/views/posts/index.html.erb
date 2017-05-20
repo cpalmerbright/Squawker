@@ -10,6 +10,10 @@
   <% @posts.each do |post| %>
       <h2><%= link_to post.user.username, edit_user_registration_path(post.user) %></h2>
       <p><%= post.content %> </p>
-      <%= link_to 'View Post', post_path(post) %>
+      <p><%= link_to 'View Post', post_path(post) %>
+      <% if post.user == current_user %>
+            <%= link_to 'Delete Post', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+      </p>
   <% end %>
 </div>
